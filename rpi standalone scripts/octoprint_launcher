@@ -1,0 +1,33 @@
+#!/bin/bash
+# /etc/init.d/octoprint_launcher
+
+### BEGIN INIT INFO
+# Provides:          octoprint_launcher
+# Required-Start:    $network $remote_fs $syslog 
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Launches octoprint webserver
+# Description:       The octoprint webserver is used for printing 3d-parts. This scripts automatically loads it on startup
+### END INIT INFO
+
+
+case "$1" in 
+    start)
+        echo "Starting Octoprint"
+	su pi -c 'octoprint &'
+        ;;
+    stop)
+        echo "Stopping Octoprint"
+        killall octoprint_launcher
+        ;;
+    *)
+        echo "Usage: /etc/init.d/octoprint_launcher start|stop. Executing start as default"
+	echo "Starting Octoprint"
+        su pi -c 'octoprint &'
+
+        exit 1
+        ;;
+esac
+
+exit 0

@@ -1,0 +1,13 @@
+NOTA: Para algunos de estos programas es necesario tener instalado el programa de control de versiones "git" porque se van a 
+ejecutar scripts que bajan cosas de repositorios en github
+
+- Firmware para Arduino board
+
+- pronterface, controla parámetros y carga del archivo a imprimir [si se hace desde una compu a la impresora] (http://reprap.org/wiki/
+Printrun#Ubuntu)
+
+- Octoprint como servicio web en una PC con Linux o en una rPI. (http://octoprint.org/download/)
+
+- slic3r para generar el archivo de slicing del modelo (http://slic3r.org/download)
+
+- freecad, openscad  u otro, para generar los stl de los diseños

@@ -1,0 +1,12 @@
+Fuente: http://forums.reprap.org/read.php?1,163707
+
+Hay que modificar lo que dice le fuente y ejecutarlo de la siguiente forma.
+
+1) svn co http://svn.code.sf.net/p/pyserial/code/trunk/pyserial/ pyserial 
+2) cd pyserial
+3) python setup.py install
+
+Si "svn" no está instalado, primero ejecutar:
+
+sudo apt-get install subversion
+

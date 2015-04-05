@@ -1,0 +1,65 @@
+- Las piezas al 15% o 20% salen bien. El 30% no es tan necesario, ni siquiera para 
+las piezas mecánicas como el extrusor.
+
+- Fijar Extruder retraction en 2 o 3mm para PLA, eso afloja el material dentro del nozzle
+y evita tambien la formación de hilitos del plástico cuando se dezplaza
+
+Hotend jammed (obstruido): https://www.matterhackers.com/articles/how-to-clear-and-prevent-jams
+    -Puede ocurrir si el filamente esta muy frio y si queda pegado sin poder ser
+    calentado de nuevo. 
+    
+    - Puede ocurrir si el filamento está muy caliente, como para derretirse pero
+    no llegar a salir. Entonces el nuevo filamento empuja y si termina engrosando
+    y no pasando. Esto es grave sobre todo si el nozzle se mantiene caliente por
+    mucho tiempo sin extruir y se puede apreciar como paulatinamente extruye peor
+    hasta qye ya no extruye ni en el aire o lo hace mal. 
+
+- Guia de problemas típicos de impresión y posible soluciones:
+http://support.3dverkstan.se/article/23-a-visual-ultimaker-troubleshooting-guide
+
+
+- Aumentar un poco el porcentaje de extrusion width de la primera capa para que 
+se peguen mejor los contornos.
+
+- En la config de infill dejar tildado el "Only infill when needed" que hace que 
+el Slicer decida cuando meter capaz sólidas, y acelera el tiempo de impresión. 
+
+- Estoy dejando destildado el "Generate support material" porque sino lo genera
+siempre en piezas donde no es necesario.
+
+- Llevé la primer capa a 0.25 para ver si eso ayuda a que se agarren mejor los
+tres perímetros de la primer capa.
+
+- Saque el "Only retract when crossing perimeters" para ver si puedo evitar 
+algunos roces del nozzle con la pieza, e hilos que quedan sobre la pieza (probar).
+
+http://www.extrudable.me/2013/04/18/exploring-extrusion-variability-and-limits/ :
+
+    - Interesante porque da algunas definiciones, indica que el volumen extruido es:
+        nozzle_diameter*feed_rate(velocidad)*layer_height
+    - Muestra algunas pruebas a distintas temperatura, y explica que a partir 
+    de 210°C el plástico admite mayor extrusion rate (aunque varía de un plástico
+    a otro), pero que por encima de los 240°C ya no se aprecian mejoras y aparecen 
+    otro tipo de efectos indeseados como mucha vizcosidad.
+    - El límite para un nozzle de 0.4mm es ~8-10 mm³/s
+
+
+http://www.protoparadigm.com/news-updates/filament-tolerances-and-print-quality/ :
+
+    - Habla de problemas asociados al error por las tolerancias en el diametro 
+    de filamento, y ecuaciones que describen distintos fenómenos en la forma del
+    filamento extruido.
+    
+http://www.makerbot.com/sailfish/tuning/ :
+    
+    - Buen tutorial que muestra patrones de falla y cuales son sus causas
+
+
+- Todos recomiendan no hacer "overfeeding" porque eso da lugar a que le plastico 
+no salga, se atasque, se enfríe y se pegue más arriba, etc.
+
+- También se menciona que hay que ajustar la presión del filamento sobre el 
+hobbed bolt, y asegurarse que el moleteado no está saturado de plástico. 
+
+- Para definir elmayor ancho de capa Una regla para eso es que el tamaño de capa 
+no sea mayor a 3/4 del diametro de tu nozzle. El Argento es de 0.4mm
